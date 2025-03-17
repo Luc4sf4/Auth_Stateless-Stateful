@@ -21,19 +21,21 @@ public class AuthService {
         var user = userRepository.findByUsername(request.username())
                 .orElseThrow(() -> new ValidationException("User not found"));
         var accessToken = jwTservice.createToken(user);
-        validatePassword(request.password(), user.getPassoword());
+        validatePassword(request.password(), user.getPassword());
         return new TokenDTO(accessToken);
     }
 
     //senha que o usuario nos passa, senha que encriptada pelo Bcrypt
     private void validatePassword(String rawPassword, String encodedPassword) {
+        if(isEmpty(rawPassword)){
+            throw new ValidationException("The password must be informed!");
+        }
 
         //Se as senhas nao batem, lance uma exception
         //"!" representa negacao
         if (!passwordEncoder.matches(rawPassword, encodedPassword)) {
             throw new ValidationException("The password is not correct");
         }
-
     }
 
     public TokenDTO validateToken(String accessToken){
