@@ -15,7 +15,8 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
 
-import static org.apache.commons.lang3.ObjectUtils.isEmpty;
+import static org.springframework.util.ObjectUtils.isEmpty;
+
 
 @Service
 @RequiredArgsConstructor//tira a necessidade do construtor e do Autowired
