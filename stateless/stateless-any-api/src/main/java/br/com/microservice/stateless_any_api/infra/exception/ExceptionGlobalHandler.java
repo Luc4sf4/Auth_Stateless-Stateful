@@ -1,7 +1,5 @@
 package br.com.microservice.stateless_any_api.infra.exception;
 
-import br.com.microservice.stateless_auth_api.infra.exception.AuthenticationException;
-import br.com.microservice.stateless_auth_api.infra.exception.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

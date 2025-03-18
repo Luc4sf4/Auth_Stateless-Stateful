@@ -27,7 +27,7 @@ public class JwtService {
     public AuthUserResponse getAuthenticatedUser(String token){
         var tokenClaims = getClaims(token);
         var userId = Integer.valueOf((String) tokenClaims.get("id"));
-        return new AuthUserResponse(userId, (String) tokenClaims.get("username"))
+        return new AuthUserResponse(userId, (String) tokenClaims.get("username"));
     }
 
     private Claims getClaims(String token){

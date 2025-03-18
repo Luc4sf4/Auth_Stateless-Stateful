@@ -42,7 +42,7 @@ public class JWTservice {
         return Date.from(
                 LocalDateTime
                         .now()
-                        .plusHours(ONE_DAY_IN_HOURS)
+                        .plusSeconds(ONE_DAY_IN_HOURS)
                         .atZone(ZoneId.systemDefault()).toInstant()
         );
     }
